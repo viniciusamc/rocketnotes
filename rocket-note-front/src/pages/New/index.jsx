@@ -49,12 +49,12 @@ export function New(){
       return alert("Digite o titulo")
     }
 
-    if(newTag){
-      return alert("Você deixou uma tag no campo para adicionar, mas não adicionou")
-    }
-
     if(newLink){
       return alert("Você deixou um link no campo para adicionar, mas não adicionou")
+    }
+
+    if(newTag){
+      return alert("Você deixou uma tag no campo para adicionar, mas não adicionou")
     }
 
     await api.post("/notes", {
