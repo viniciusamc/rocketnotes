@@ -28,7 +28,7 @@ function AuthProvider({ children }){
     }
   }
 
-
+  
   function signOut(){
     localStorage.removeItem("@rocketnotes:user");
     localStorage.removeItem("@rocketnotes:token");
