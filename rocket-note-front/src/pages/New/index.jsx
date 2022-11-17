@@ -27,8 +27,12 @@ export function New(){
   const navigate = useNavigate();
 
   function handleAddLink(){
-    setLinks(prevState => [...prevState, newLink])
-    setNewLink("");
+    if(!newLink){
+      alert("Digite algum link primeiro!");
+    } else {
+      setLinks(prevState => [...prevState, newLink])
+      setNewLink("")
+    }
   }
 
   function handleRemoveLink(deleted){
@@ -36,7 +40,12 @@ export function New(){
   }
 
   function handleAddTag(){
+    if(!newTag){
+      alert("Digite uma tag primeiro!")
+      return
+    } 
     setTags(prevState => [...prevState, newTag])
+    
     setNewTag("");
   }
 
@@ -65,6 +74,7 @@ export function New(){
     });
 
     alert("Nota criada com sucesso!");
+    navigate("/")
   }
 
 
